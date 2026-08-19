@@ -1,5 +1,7 @@
 <?php
 define('PREVENT_DIRECT_ACCESS', TRUE);
+
+session_start();
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
@@ -84,4 +86,6 @@ define('PUBLIC_DIR', $public_folder);
  * ------------------------------------------------------
  */
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
+
+
 ?>
