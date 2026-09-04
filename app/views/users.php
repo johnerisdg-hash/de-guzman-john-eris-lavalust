@@ -4,11 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #000;
+        }
+
+        th,
+        td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #fff;
+            text-align: left;
+        }
+
+        th {
+            background: #222;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding: 0.7rem 1rem;
+            border: 1px solid #fff;
+            color: #fff;
+            background: #222;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .empty {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
     <h2>Registered Users</h2>
+    <a class="home-button" href="<?= site_url('student'); ?>">Back to Student Homepage</a>
 
     <table>
         <thead>

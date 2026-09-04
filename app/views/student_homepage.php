@@ -67,6 +67,7 @@
         
         <div class="btn-container">
             <a href="<?= site_url('student/profile'); ?>">View Profile</a>
+            <a href="<?= site_url('users'); ?>">View Registered Users</a>
         </div>
     </div>
 </body>
