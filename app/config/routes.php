@@ -56,4 +56,6 @@ $router->get('/', 'StudentController::index', ['middleware' => 'studentmiddlewar
 
 $router->get('/student', 'StudentController::index', ['middleware' => 'studentmiddleware']);
 $router->get('/student/profile', 'StudentController::profile', ['middleware' => 'studentmiddleware']);
+
+$router->get('/users','UserController::showUsers');
        
