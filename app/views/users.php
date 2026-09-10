@@ -53,6 +53,25 @@
         .empty {
             text-align: center;
         }
+
+         .create-button {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding: 0.7rem 1rem;
+            border: 1px solid #fff;
+            color: #fff;
+            background: #222;
+            text-decoration: none;
+        }
+
+        .create-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .empty {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +79,7 @@
 <div class="container">
     <h2>Registered Users</h2>
     <a class="home-button" href="<?= site_url('student'); ?>">Back to Student Homepage</a>
+   
 
     <table>
         <thead>

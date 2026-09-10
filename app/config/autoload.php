@@ -109,4 +109,10 @@ $autoload['models'] = array();
 $autoload['configs'] = array();
 
 $autoload['helpers'] = array('url');
+
+
+
+
+
+
 ?>

@@ -47,3 +47,11 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 
 $config = $config ?? [];
+
+require_once APP_DIR . 'middlewares/productmiddleware.php';
+
+$config['middlewares'] = [
+	'productmiddleware' => new ProductMiddleware(),
+];
+
+

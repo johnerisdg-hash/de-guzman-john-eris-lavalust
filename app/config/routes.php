@@ -59,3 +59,17 @@ $router->get('/student/profile', 'StudentController::profile', ['middleware' => 
 
 $router->get('/users','UserController::showUsers');
        
+
+
+$router->get('/products/login', 'AuthController::login');
+$router->post('/products/login', 'AuthController::authenticate');
+$router->get('/products/logout', 'AuthController::logout');
+
+$router->group(['prefix' => 'products', 'middleware' => 'productmiddleware'], function ($router) {
+	$router->get('/', 'ProductController::index');
+	$router->get('/create', 'ProductController::create');
+	$router->post('/create', 'ProductController::store');
+	$router->get('/edit/{id}', 'ProductController::edit');
+	$router->post('/edit/{id}', 'ProductController::update');
+	$router->post('/delete/{id}', 'ProductController::delete');
+});
