@@ -44,7 +44,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 */
 /** @var object $router **/
 
-
+  $router->get('/', 'Welcome::index');
 
 (function() {
 require APP_DIR . 'config/middleware.php';
@@ -66,10 +66,35 @@ $router->post('/products/login', 'AuthController::authenticate');
 $router->get('/products/logout', 'AuthController::logout');
 
 $router->group(['prefix' => 'products', 'middleware' => 'productmiddleware'], function ($router) {
-	$router->get('/', 'ProductController::index');
-	$router->get('/create', 'ProductController::create');
-	$router->post('/create', 'ProductController::store');
-	$router->get('/edit/{id}', 'ProductController::edit');
-	$router->post('/edit/{id}', 'ProductController::update');
-	$router->post('/delete/{id}', 'ProductController::delete');
+    $router->get('/', 'ProductController::index');
+    $router->get('/create', 'ProductController::create');
+    $router->post('/create', 'ProductController::store');
+    $router->get('/edit/{id}', 'ProductController::edit');
+    $router->post('/edit/{id}', 'ProductController::update');
+    $router->post('/delete/{id}', 'ProductController::delete');
 });
+
+// Migration routes: CLI only, so they can't be hit from a browser
+if (PHP_SAPI === 'cli') {
+    $router->get('create-migration/{migration_class}', 'MigrationController::create_migration');
+    $router->get('migrate', 'MigrationController::migrate');
+    $router->get('rollback', 'MigrationController::rollback');
+    $router->get('rollback-all', 'MigrationController::rollback_all');
+    $router->get('refresh', 'MigrationController::refresh');
+    $router->get('status', 'MigrationController::status');
+}
+
+$router->get('/api/products', 'ApiProductController::index');
+$router->post('/api/products', 'ApiProductController::store');
+$router->put('/api/products/{id}', 'ApiProductController::update');
+$router->delete('/api/products/{id}', 'ApiProductController::delete');
+	
+
+
+
+
+
+
+$router->post('/api/login', 'ApiAuthController::login');
+
+
