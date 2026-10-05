@@ -11,7 +11,7 @@ class ApiProductController extends Controller
         $this->call->database();
 
         // AUTH GOES HERE LATER:
-        //$this->api->require_jwt();
+        $this->api->require_jwt();
     }
 
     // GET /api/products
