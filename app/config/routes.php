@@ -91,10 +91,19 @@ $router->delete('/api/products/{id}', 'ApiProductController::delete');
 	
 
 
+$router->post('/api/login', 'ApiAuthController::login');
+$router->post('/api/users/create', 'ApiAuthController::create');
+$router->post('/api/refresh', 'ApiAuthController::refresh');
+$router->post('/api/logout', 'ApiAuthController::logout');
 
+$router->get('/api/users/me', 'ApiUserController::me');
+$router->get('/api/users', 'ApiUserController::index');
+$router->put('/api/users/{id}', 'ApiUserController::update');
+$router->delete('/api/users/{id}', 'ApiUserController::delete');
 
 
 
 $router->post('/api/login', 'ApiAuthController::login');
 
 
+$router->post('/api/users/create', 'ApiAuthController::create');
